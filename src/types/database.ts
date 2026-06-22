@@ -66,6 +66,7 @@ export interface Database {
           created_at?: string
           updated_at?: string
         }
+        Relationships: []
       }
       subscriptions: {
         Row: {
@@ -119,6 +120,7 @@ export interface Database {
           created_at?: string
           updated_at?: string
         }
+        Relationships: []
       }
       payments: {
         Row: {
@@ -157,6 +159,7 @@ export interface Database {
           created_at?: string
           updated_at?: string
         }
+        Relationships: []
       }
       resumes: {
         Row: {
@@ -189,6 +192,7 @@ export interface Database {
           created_at?: string
           updated_at?: string
         }
+        Relationships: []
       }
       ats_scans: {
         Row: {
@@ -227,6 +231,7 @@ export interface Database {
           suggestions?: Json
           created_at?: string
         }
+        Relationships: []
       }
       cover_letters: {
         Row: {
@@ -265,6 +270,7 @@ export interface Database {
           created_at?: string
           updated_at?: string
         }
+        Relationships: []
       }
       interview_sessions: {
         Row: {
@@ -303,6 +309,7 @@ export interface Database {
           created_at?: string
           completed_at?: string | null
         }
+        Relationships: []
       }
       interview_answers: {
         Row: {
@@ -332,6 +339,7 @@ export interface Database {
           score?: number | null
           created_at?: string
         }
+        Relationships: []
       }
       job_applications: {
         Row: {
@@ -391,6 +399,7 @@ export interface Database {
           created_at?: string
           updated_at?: string
         }
+        Relationships: []
       }
     }
     Views: Record<string, never>

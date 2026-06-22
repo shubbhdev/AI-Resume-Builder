@@ -141,7 +141,9 @@ export async function getSavedJobs() {
   return data
 }
 
-export async function updateJobStatus(jobId: string, status: string) {
+import type { ApplicationStatus } from '@/types/database'
+
+export async function updateJobStatus(jobId: string, status: ApplicationStatus) {
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) throw new Error('Unauthorized')

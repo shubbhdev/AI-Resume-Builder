@@ -38,7 +38,7 @@ export default function ResumeDashboard() {
       if (error) {
         toast.error('Failed to load resumes')
       } else {
-        setResumes(data as Resume[])
+        setResumes(data as unknown as Resume[])
       }
       setLoading(false)
     }

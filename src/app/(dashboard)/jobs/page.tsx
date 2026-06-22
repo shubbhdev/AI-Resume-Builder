@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { getSavedJobs, updateJobStatus } from '@/app/actions/jobs'
+import type { ApplicationStatus } from '@/types/database'
 import { Briefcase, MapPin, DollarSign, Calendar, ExternalLink, Loader2, Building2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { toast } from 'sonner'
@@ -27,7 +28,7 @@ export default function JobTrackerPage() {
 
   const handleStatusChange = async (jobId: string, newStatus: string) => {
     try {
-      await updateJobStatus(jobId, newStatus)
+      await updateJobStatus(jobId, newStatus as ApplicationStatus)
       setJobs(jobs.map(j => j.id === jobId ? { ...j, status: newStatus } : j))
       toast.success('Status updated')
     } catch (error: any) {
