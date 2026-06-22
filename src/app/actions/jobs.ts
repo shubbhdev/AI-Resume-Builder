@@ -4,6 +4,8 @@ import { createClient } from '@/lib/supabase/server'
 import { callAI, parseAIJson } from '@/lib/ai/gemini'
 import { logActivity } from '@/lib/logger'
 
+import type { Database, ApplicationStatus } from '@/types/database'
+
 export interface JobMatch {
   id: string
   title: string
@@ -68,7 +70,7 @@ Only return the valid JSON array.
 `
 
   const responseText = await callAI(prompt, { jsonMode: true, temperature: 0.8 })
-  
+
   let jobs: JobMatch[] = []
   try {
     jobs = parseAIJson<JobMatch[]>(responseText)
@@ -99,19 +101,20 @@ export async function saveJobApplication(job: JobMatch, resumeId?: string) {
     throw new Error('Job is already saved.')
   }
 
-  const { data, error } = await supabase.from('job_applications').insert({
+  const payload: Database['public']['Tables']['job_applications']['Insert'] = {
     user_id: user.id,
     resume_id: resumeId || null,
     company_name: job.company,
     job_title: job.title,
-    job_url: job.url,
-    location: job.location,
-    salary_range: job.salary,
-    status: 'bookmarked',
-    match_score: job.matchScore,
-    job_description_summary: job.descriptionSummary,
-    contacts: {} // empty json
-  }).select().single()
+    job_url: job.url || null,
+    location: job.location || null,
+    salary_range: job.salary || null,
+    status: 'bookmarked' as ApplicationStatus,
+    match_score: job.matchScore || null,
+    job_description_summary: job.descriptionSummary || null,
+  }
+
+  const { data, error } = await supabase.from('job_applications').insert(payload).select().single()
 
   if (error) {
     console.error('Failed to save job:', error)
@@ -141,7 +144,6 @@ export async function getSavedJobs() {
   return data
 }
 
-import type { ApplicationStatus } from '@/types/database'
 
 export async function updateJobStatus(jobId: string, status: ApplicationStatus) {
   const supabase = await createClient()
