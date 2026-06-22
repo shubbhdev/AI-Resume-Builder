@@ -1,0 +1,316 @@
+/* src/app/globals.css */
+/* CareerAI Design System — Dark-first, Data-rich */
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* =============================================
+   TAILWIND V4 THEME TOKENS
+   ============================================= */
+@theme {
+  --font-family-sans: var(--font-inter), system-ui, sans-serif;
+  --font-family-mono: var(--font-mono), 'JetBrains Mono', monospace;
+
+  /* Brand colors */
+  --color-brand-50:  #EEF2FF;
+  --color-brand-100: #E0E7FF;
+  --color-brand-500: #6366F1;
+  --color-brand-600: #4F46E5;
+  --color-brand-700: #4338CA;
+  --color-brand-900: #312E81;
+
+  /* Surface colors */
+  --color-surface-base:     #0A0A0F;
+  --color-surface:          #111118;
+  --color-surface-elevated: #1A1A26;
+  --color-surface-overlay:  #22222F;
+
+  /* Semantic */
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-danger:  #EF4444;
+  --color-info:    #06B6D4;
+}
+
+/* =============================================
+   DESIGN TOKENS (CSS Custom Properties)
+   ============================================= */
+@layer base {
+  :root {
+    /* Brand */
+    --brand-primary:   #6366F1;
+    --brand-secondary: #8B5CF6;
+    --brand-accent:    #06B6D4;
+
+    /* Backgrounds */
+    --bg-base:     #0A0A0F;
+    --bg-surface:  #111118;
+    --bg-elevated: #1A1A26;
+    --bg-overlay:  #22222F;
+
+    /* Borders */
+    --border-subtle:  rgba(255,255,255,0.06);
+    --border-default: rgba(255,255,255,0.10);
+    --border-strong:  rgba(99,102,241,0.40);
+
+    /* Text */
+    --text-primary:   #F1F5F9;
+    --text-secondary: #94A3B8;
+    --text-muted:     #475569;
+
+    /* Semantic */
+    --success: #10B981;
+    --warning: #F59E0B;
+    --danger:  #EF4444;
+    --info:    #06B6D4;
+
+    /* ShadCN CSS variables */
+    --background: 10 10 15;
+    --foreground: 241 245 249;
+    --card: 17 17 24;
+    --card-foreground: 241 245 249;
+    --popover: 26 26 38;
+    --popover-foreground: 241 245 249;
+    --primary: 99 102 241;
+    --primary-foreground: 255 255 255;
+    --secondary: 26 26 38;
+    --secondary-foreground: 241 245 249;
+    --muted: 17 17 24;
+    --muted-foreground: 148 163 184;
+    --accent: 26 26 38;
+    --accent-foreground: 241 245 249;
+    --destructive: 239 68 68;
+    --border: 255 255 255;
+    --input: 255 255 255;
+    --ring: 99 102 241;
+    --radius: 0.625rem;
+  }
+}
+
+/* =============================================
+   BASE RESET
+   ============================================= */
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    font-family: var(--font-family-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--bg-base);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--bg-elevated);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--brand-primary);
+  }
+
+  /* Selection color */
+  ::selection {
+    background: rgba(99, 102, 241, 0.25);
+    color: var(--text-primary);
+  }
+}
+
+/* =============================================
+   UTILITY CLASSES
+   ============================================= */
+@layer utilities {
+  /* Gradients */
+  .gradient-brand {
+    background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+  }
+
+  .gradient-brand-text {
+    background: linear-gradient(135deg, #6366F1, #8B5CF6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-hero {
+    background: linear-gradient(135deg, #0F0F23 0%, #1A1A3E 50%, #0F0F23 100%);
+  }
+
+  .gradient-card {
+    background: linear-gradient(145deg, rgba(99,102,241,0.08), rgba(139,92,246,0.04));
+  }
+
+  /* Glass effect */
+  .glass {
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .glass-strong {
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255,255,255,0.12);
+  }
+
+  /* Card variants */
+  .card-surface {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 16px;
+  }
+
+  .card-glow {
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.06), 0 4px 24px rgba(0,0,0,0.4);
+  }
+
+  /* Glow effects */
+  .glow-brand {
+    box-shadow: 0 0 30px rgba(99,102,241,0.25);
+  }
+
+  .glow-success {
+    box-shadow: 0 0 20px rgba(16,185,129,0.25);
+  }
+
+  .glow-warning {
+    box-shadow: 0 0 20px rgba(245,158,11,0.25);
+  }
+
+  .glow-danger {
+    box-shadow: 0 0 20px rgba(239,68,68,0.25);
+  }
+
+  /* Animations */
+  .animate-fade-up     { animation: fadeUp 0.35s ease-out both; }
+  .animate-fade-in     { animation: fadeIn 0.25s ease-out both; }
+  .animate-shimmer     { animation: shimmer 1.6s infinite linear; }
+  .animate-glow-pulse  { animation: glowPulse 2.5s ease-in-out infinite; }
+  .animate-slide-right { animation: slideInRight 0.3s ease-out both; }
+  .animate-count-up    { animation: countUp 0.4s ease-out both; }
+
+  /* Shimmer skeleton */
+  .skeleton {
+    background: linear-gradient(
+      90deg,
+      var(--bg-surface) 25%,
+      var(--bg-elevated) 50%,
+      var(--bg-surface) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.6s infinite linear;
+    border-radius: 8px;
+  }
+}
+
+/* =============================================
+   KEYFRAMES
+   ============================================= */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(99,102,241,0.2); }
+  50%       { box-shadow: 0 0 40px rgba(99,102,241,0.4); }
+}
+
+@keyframes scoreRing {
+  from { stroke-dashoffset: 283; }
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: scale(0.8); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(16px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* =============================================
+   COMPONENT STYLES
+   ============================================= */
+
+/* Brand button */
+.btn-brand {
+  background: linear-gradient(135deg, #6366F1, #8B5CF6);
+  color: white;
+  border: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-brand:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 24px rgba(99,102,241,0.4);
+}
+
+.btn-brand:active {
+  transform: scale(0.97);
+}
+
+/* Input focus ring */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: none;
+  border-color: var(--brand-primary) !important;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
+}
+
+/* Resume A4 paper preview */
+.resume-paper {
+  background: #ffffff;
+  color: #111111;
+  width: 794px;
+  min-height: 1123px;
+  font-family: 'Times New Roman', Georgia, serif;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+}
+
+/* Score ring */
+.score-ring-track {
+  stroke: rgba(255,255,255,0.06);
+  fill: none;
+}
+
+.score-ring-fill {
+  fill: none;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1.2s ease-out;
+}
