@@ -1,36 +1,217 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 CareerAI
 
-## Getting Started
+> **AI-Powered Career Platform for Modern Job Seekers**
 
-First, run the development server:
+Build professional ATS-optimized resumes, generate AI-powered cover letters, analyze resumes, manage job applications, and prepare for interviews — all in one platform.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+🌐 **Live Demo:** https://ai-resume-builder-olive-nine.vercel.app/
+
+---
+
+ # 🏗 Architecture
+
+                User
+                  │
+                  ▼
+        Next.js + React
+                  │
+     ┌────────────┼────────────┐
+     ▼            ▼            ▼
+ Gemini AI    Supabase     Razorpay
+     │            │            │
+     └────────────┼────────────┘
+                  ▼
+             CareerAI
+
+
+
+
+
+
+  # 🚀 CareerAI
+
+<div align="center">
+
+### AI-Powered Career Platform for Modern Job Seekers
+
+Build professional ATS-friendly resumes, generate AI-powered content, manage job applications, and accelerate your career — all from one platform.
+
+🌐 **Live Demo:** https://ai-resume-builder-olive-nine.vercel.app/
+
+</div>
+
+---
+
+# ✨ Features
+
+## 🤖 AI Resume Builder
+
+- Generate professional resumes with AI
+- ATS-friendly resume formatting
+- Real-time editing
+- Resume management
+
+## 📄 AI Cover Letter Generator
+
+- Generate personalized cover letters
+- Tailored for job descriptions
+- Professional writing assistance
+
+## 📊 ATS Optimization
+
+- Resume optimization
+- ATS compatibility improvements
+- Smart content suggestions
+
+## 💼 Job Application Tracker
+
+- Save job applications
+- Track application status
+- Organize job search
+
+## 🔐 Authentication
+
+- Secure user authentication
+- Protected dashboard
+- Personal resume management
+
+## 💳 Premium Features
+
+- Razorpay Payment Integration
+- Premium subscription support
+- Billing management
+
+---
+
+# 🛠 Tech Stack
+
+## Frontend
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
+- Framer Motion
+
+## Backend
+
+- Supabase
+
+## AI
+
+- Google Gemini API
+
+## State Management
+
+- Zustand
+- React Query
+
+## Payments
+
+- Razorpay
+
+## Deployment
+
+- Vercel
+
+---
+
+# 📂 Project Structure
+
+```text
+src/
+│
+├── app/
+├── components/
+├── hooks/
+├── lib/
+├── store/
+├── types/
+└── middleware.ts
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# ⚙ Installation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+git clone https://github.com/shubbhdev/AI-Resume-Builder.git
 
-## Learn More
+cd AI-Resume-Builder
 
-To learn more about Next.js, take a look at the following resources:
+npm install
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+# 🚀 Live Demo
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+https://ai-resume-builder-olive-nine.vercel.app/
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+# 🛣 Roadmap
+
+- [x] Authentication
+- [x] Resume Builder
+- [x] AI Resume Generation
+- [x] Dashboard
+- [x] Job Tracker
+- [x] Premium Billing
+
+### Coming Soon
+
+- [ ] AI Interview Assistant
+- [ ] Resume Optimizer
+- [ ] LinkedIn Resume Import
+- [ ] Resume Analytics
+- [ ] Multiple Resume Templates
+- [ ] AI Career Coach
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome.
+
+1. Fork the repository
+
+2. Create your feature branch
+
+3. Commit your changes
+
+4. Push your branch
+
+5. Open a Pull Request
+
+---
+
+# 👨‍💻 Developer
+
+**Shubham Sharma**
+
+Frontend Developer | React.js | Next.js | TypeScript
+
+Currently Building **CareerAI** and **SalonAI**
+
+LinkedIn:
+https://www.linkedin.com/in/shubhsharmaaa/
+
+---
+
+# ⭐ Support
+
+If you found this project useful,
+
+Please consider giving it a ⭐ on GitHub.
+
+It motivates me to build more high-quality open-source projects.
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License.
